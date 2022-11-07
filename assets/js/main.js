@@ -84,4 +84,17 @@ function drawTeamMember(teamMember) {
   teamContainer.innerHTML = prevContent;
 }
 
+function addNewMember() {
+ 
+    //Leggo il valore degli input
+    const name = document.getElementById('name').value;
+    const role = document.getElementById('role').value;
+    const photo = document.getElementById('image').value;
+    const qualities = document.getElementById('qualities').value;
   
+    const arrNewQualities = qualities.split(',');
+    const cleanNewQualities = arrNewQualities.map( quality => {
+      return quality.trim();
+    })
+  
+    console.log(cleanNewQualities);
