@@ -40,5 +40,20 @@ const team = [
     }
   ];
 
-  
+const teamContainer = document.querySelector('.row');
+const addButton = document.querySelector('#btnAdd');
+addButton.addEventListener('click', addNewMember);
+
+printTeam();
+
+
+function printTeam() {
+  //resetto il teamContainer
+  teamContainer.innerHTML = '';
+
+  //stampo tutti i membri del mio team
+  team.forEach(teamMember => drawTeamMember(teamMember))
+
+}
+
   
