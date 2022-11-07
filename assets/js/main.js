@@ -98,3 +98,29 @@ function addNewMember() {
     })
   
     console.log(cleanNewQualities);
+
+    //Creo un oggetto con tutti i valori necessari
+  const newTeamMember = {
+    name: name,
+    role: role,
+    photo: photo,
+    qualities: qualities.split(',')
+  }
+
+  console.log(newTeamMember)
+   //Invio il nuovo oggetto a drawTeamMember
+   drawTeamMember(newTeamMember);
+
+   //Aggiungo l'elemento alla base dati
+   team.push(newTeamMember);
+
+  //  Resetto il form
+  resetForm()
+
+  function resetForm() {
+    document.getElementById('name').value = '';
+    document.getElementById('role').value = '';
+    document.getElementById('image').value = '';
+    document.getElementById('qualities').value = '';
+  }
+ }
