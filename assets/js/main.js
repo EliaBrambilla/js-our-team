@@ -56,4 +56,32 @@ function printTeam() {
 
 }
 
+function drawTeamMember(teamMember) {
+    //Leggo il contenuto del container
+  let prevContent = teamContainer.innerHTML;
+
+    //prendo le informazione dal teamMember
+  const name = teamMember.name;
+  const role = teamMember.role;
+  const photo = teamMember.photo;
+  const qualities = teamMember.qualities;
+
+   //genero l'output html
+    prevContent += `
+  <div class="col py-4">
+    <div class="card" style="width: 20em;">
+      <img src="${photo}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title text-center">${name}</h5>
+        <p class="card-text text-center">${role}</p>
+        <p class="card-adjectives text-center" style="font-size: 0.9rem">${qualities.join(' - ')}</p>
+      </div>
+    </div>
+  </div>
+ `;
+
+  //lo aggiungo  all'html presente
+  teamContainer.innerHTML = prevContent;
+}
+
   
